@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard de Inventário</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        .online { color: green; }
+        .offline { color: red; }
+        .machine-card { transition: all 0.3s; }
+        .machine-card:hover { transform: translateY(-2px); box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+        .software-badge { font-size: 0.8em; }
+        .status-indicator {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            display: inline-block;
+            margin-right: 5px;
+        }
+        .status-online { background-color: #28a745; }
+        .status-offline { background-color: #dc3545; }
+        .chart-container {
+            position: relative;
+            height: 300px;
+            width: 100%;
+        }
+
+        .alert-sm {
+        padding: 0.25rem 0.5rem;
+        margin-bottom: 0.5rem;
+        font-size: 0.875rem;
+    }
+    
+    .card.border-warning {
+        border: 2px solid #ffc107;
+    }
+    
+    .compliance-badge {
+        font-size: 0.75rem;
+    }
+
+    .compliance-chart-container {
+    position: relative;
+    height: 280px;
+    width: 100%;
+    }
+
+    .chart-container {
+    position: relative;
+    height: 300px;
+    width: 100%;
+    }
+
+    .compliance-status {
+    font-size: 0.9rem;
+    font-weight: bold;
+    }
+
+    .status-em-dia {
+    color: #28a745;
+    }
+
+    .status-pendente {
+    color: #dc3545;
+    }
+
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <i class="fas fa-server"></i> Sistema de Inventário
+            </a>
+            <span class="navbar-text">
+                <span id="connection-status" class="badge bg-success">
+                    <i class="fas fa-wifi"></i> Conectado
+                </span>
+            </span>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-12">
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                    <h1><i class="fas fa-desktop"></i> Dashboard de Máquinas</h1>
+                    <div>
+                        <button class="btn btn-primary" onclick="loadMachines()">
+                            <i class="fas fa-sync-alt"></i> Atualizar
+                        </button>
+                        <button class="btn btn-outline-secondary" onclick="testAPI()">
+                            <i class="fas fa-bolt"></i> Testar API
+                        </button>
+                        <!-- NOVO BOTÃO DE RELATÓRIO -->
+        <button class="btn btn-warning" onclick="generateComplianceReport()" 
+                title="Gerar relatório de máquinas pendentes">
+            <i class="fas fa-file-alt"></i> Relatório
+        </button>
+                    </div>
+                </div>
+
+                <!-- Estatísticas -->
+                <div class="row mb-4">
+                    <div class="col-md-3">
+                        <div class="card bg-primary text-white">
+                            <div class="card-body text-center">
+                                <h5><i class="fas fa-desktop"></i> Total</h5>
+                                <h3 id="total-machines">0</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card bg-success text-white">
+                            <div class="card-body text-center">
+                                <h5><i class="fas fa-wifi"></i> Online</h5>
+                                <h3 id="online-machines">0</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card bg-warning text-white">
+                            <div class="card-body text-center">
+                                <h5><i class="fas fa-plug"></i> Offline</h5>
+                                <h3 id="offline-machines">0</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card bg-info text-white">
+                            <div class="card-body text-center">
+                                <h5><i class="fas fa-microchip"></i> Softwares</h5>
+                                <h3 id="total-software">0</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+<!-- Gráfico de Distribuição de SO -->
+<div class="row mb-4">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header">
+                <h5><i class="fas fa-chart-pie"></i> Distribuição de Sistemas Operacionais</h5>
+            </div>
+            <div class="card-body">
+                <div class="chart-container">
+                    <canvas id="osChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- NOVO GRÁFICO DE COMPLIANCE MENSAL -->
+<div class="row mb-4">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header">
+                <h5><i class="fas fa-calendar-check"></i> Compliance Mensal - Inventário</h5>
+            </div>
+            <div class="card-body">
+                <div class="compliance-chart-container">
+                    <canvas id="complianceChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+                <!-- Loading -->
+                <div id="loading" class="text-center">
+                    <div class="spinner-border text-primary" role="status">
+                        <span class="visually-hidden">Carregando...</span>
+                    </div>
+                    <p>Carregando máquinas...</p>
+                </div>
+
+                <!-- Máquinas -->
+                <div id="machines-container" class="row" style="display: none;"></div>
+
+                <!-- Mensagens de erro -->
+                <div id="error-message" class="alert alert-danger" style="display: none;">
+                    <i class="fas fa-exclamation-triangle"></i> Erro ao carregar dados. Verifique se o servidor está rodando.
+                </div>
+
+                <!-- Modal de Softwares -->
+                <div class="modal fade" id="softwareModal" tabindex="-1">
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="softwareModalTitle">Softwares Instalados</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div id="software-list"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    let allMachines = [];
+    let osChart = null;
+    let complianceChartInstance = null;
+
+    // ============================================================
+    // 1. FUNÇÕES DE GRÁFICOS (PRIMEIRO)
+    // ============================================================
+
+    function createComplianceChart(machines) {
+        const ctx = document.getElementById('complianceChart');
+        
+        if (!ctx) {
+            console.error('Canvas complianceChart não encontrado!');
+            return;
+        }
+        
+        // Destruir gráfico anterior se existir
+        if (complianceChartInstance) {
+            complianceChartInstance.destroy();
+        }
+        
+        // Contar compliance
+        const emCompliance = machines.filter(m => m.em_compliance).length;
+        const foraCompliance = machines.filter(m => !m.em_compliance).length;
+        const total = machines.length;
+        
+        const percentEmDia = total > 0 ? Math.round((emCompliance / total) * 100) : 0;
+        const percentPendente = total > 0 ? Math.round((foraCompliance / total) * 100) : 0;
+        
+        // Se não há dados, não criar gráfico
+        if (total === 0) {
+            return;
+        }
+        
+        complianceChartInstance = new Chart(ctx, {
+            type: 'pie',
+            data: {
+                labels: [
+                    `Em Dia (${emCompliance} - ${percentEmDia}%)`,
+                    `Pendentes (${foraCompliance} - ${percentPendente}%)`
+                ],
+                datasets: [{
+                    data: [emCompliance, foraCompliance],
+                    backgroundColor: [
+                        '#28a745', // Verde - Em dia
+                        '#dc3545'  // Vermelho - Pendentes
+                    ],
+                    borderWidth: 2,
+                    borderColor: '#ffffff'
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: true,
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                        labels: {
+                            font: {
+                                size: 12,
+                                weight: 'bold'
+                            }
+                        }
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                const label = context.label || '';
+                                const value = context.raw || 0;
+                                return `${label}: ${value} máquina(s)`;
+                            }
+                        }
+                    }
+                }
+            }
+        });
+    }
+
+    function createOSChart(machines) {
+        const ctx = document.getElementById('osChart').getContext('2d');
+
+        // Destruir gráfico anterior se existir
+        if (osChart) {
+            osChart.destroy();
+        }
+        
+        // Contar distribuição de SO
+        const osDistribution = {};
+        machines.forEach(machine => {
+            const os = machine.so || 'Desconhecido';
+            // Simplificar nomes longos de SO
+            let simplifiedOS = os;
+            if (os.includes('Windows')) simplifiedOS = 'Windows';
+            if (os.includes('Linux')) simplifiedOS = 'Linux';
+            if (os.includes('macOS')) simplifiedOS = 'macOS';
+            
+            osDistribution[simplifiedOS] = (osDistribution[simplifiedOS] || 0) + 1;
+        });
+        
+        const labels = Object.keys(osDistribution);
+        const data = Object.values(osDistribution);
+        
+        // Cores para o gráfico
+        const backgroundColors = [
+            '#FF6384', '#36A2EB', '#FFCE56', '#4BC0C0',
+            '#9966FF', '#FF9F40', '#FF6384', '#C9CBCF',
+            '#FF6384', '#36A2EB', '#FFCE56', '#4BC0C0'
+        ];
+        
+        osChart = new Chart(ctx, {
+            type: 'pie',
+            data: {
+                labels: labels,
+                datasets: [{
+                    data: data,
+                    backgroundColor: backgroundColors.slice(0, labels.length),
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'right',
+                        labels: {
+                            font: {
+                                size: 12
+                            }
+                        }
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                const label = context.label || '';
+                                const value = context.raw || 0;
+                                const total = context.dataset.data.reduce((a, b) => a + b, 0);
+                                const percentage = Math.round((value / total) * 100);
+                                return `${label}: ${value} (${percentage}%)`;
+                            }
+                        }
+                    }
+                }
+            }
+        });
+    }
+
+    // ============================================================
+    // 2. FUNÇÕES DE EXIBIÇÃO DE DADOS
+    // ============================================================
+
+    function displayMachines(machines) {
+        const container = document.getElementById('machines-container');
+        container.innerHTML = '';
+
+        if (machines.length === 0) {
+            container.innerHTML = `
+                <div class="col-12">
+                    <div class="alert alert-info">
+                        <i class="fas fa-info-circle"></i>
+                        Nenhuma máquina encontrada. Execute o agente em alguma máquina.
+                    </div>
+                </div>
+            `;
+            showContainer();
+            return;
+        }
+
+        machines.forEach(machine => {
+            const isOnline = machine.online;
+            const lastUpdate = new Date(machine.ultima_atualizacao);
+            const daysInactive = Math.floor((new Date() - lastUpdate) / (1000 * 60 * 60 * 24));
+            const softwareCount = machine.software ? machine.software.length : 0;
+            const emCompliance = machine.em_compliance;
+            const mesReferencia = machine.mes_referencia;
+            
+            // Alertas de compliance
+            let complianceAlert = '';
+            if (!emCompliance) {
+                complianceAlert = `
+                    <div class="alert alert-warning alert-sm mt-2">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        <strong>Alerta Mensal:</strong> Não rodou em ${mesReferencia}
+                    </div>
+                `;
+            }
+            
+            const card = `
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="card machine-card ${!emCompliance ? 'border-warning' : ''}">
+                        <div class="card-header d-flex justify-content-between align-items-center">
+                            <div>
+                                <span class="badge ${isOnline ? 'bg-success' : 'bg-danger'}">
+                                    <span class="status-indicator ${isOnline ? 'status-online' : 'status-offline'}"></span>
+                                    ${isOnline ? 'Online' : 'Offline'}
+                                </span>
+                                ${!emCompliance ? '<span class="badge bg-warning"><i class="fas fa-exclamation-triangle"></i> Pendente</span>' : ''}
+                            </div>
+                            <small>#${machine.id}</small>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                <i class="fas fa-computer"></i> ${machine.nome_computador}
+                                ${!emCompliance ? '<i class="fas fa-exclamation-triangle text-warning" title="Pendente este mês"></i>' : ''}
+                            </h5>
+                            ${complianceAlert}
+                            <p class="card-text">
+                                <strong><i class="fas fa-user"></i> Usuário:</strong> ${machine.usuario || 'N/A'}<br>
+                                <strong><i class="fas fa-globe"></i> Domínio:</strong> ${machine.dominio || 'N/A'}<br>
+                                <strong><i class="fas fa-network-wired"></i> IP:</strong> ${machine.ip || 'N/A'}<br>
+                                <strong><i class="fas fa-windows"></i> SO:</strong> ${machine.so || 'N/A'}<br>
+                                <strong><i class="fas fa-memory"></i> RAM:</strong> ${machine.ram || 'N/A'}<br>
+                                <strong><i class="fas fa-hdd"></i> Armazenamento:</strong> ${machine.armazenamento || 'N/A'}<br>
+                                <strong><i class="fas fa-calendar-check"></i> Compliance:</strong> 
+                                    <span class="badge ${emCompliance ? 'bg-success' : 'bg-warning'}">
+                                        ${emCompliance ? 'Em Dia' : 'Pendente'}
+                                    </span><br>
+                                <strong><i class="fas fa-clock"></i> Última atualização:</strong> ${lastUpdate.toLocaleString()}<br>
+                                <strong><i class="fas fa-calendar-times"></i> Dias inativa:</strong> ${daysInactive} dias
+                            </p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <button class="btn btn-sm btn-outline-primary" 
+                                        onclick="showSoftware(${machine.id}, '${machine.nome_computador}')">
+                                    <i class="fas fa-list"></i> Softwares (${softwareCount})
+                                </button>
+                                <div>
+                                    <button class="btn btn-sm btn-outline-danger" 
+                                            onclick="deleteMachine(${machine.id}, '${machine.nome_computador}')"
+                                            title="Deletar máquina">
+                                        <i class="fas fa-trash"></i> Deletar
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+            container.innerHTML += card;
+        });
+
+        showContainer();
+    }
+
+    function showSoftware(machineId, machineName) {
+        const machine = allMachines.find(m => m.id === machineId);
+        if (!machine || !machine.software) return;
+
+        document.getElementById('softwareModalTitle').textContent = 
+            `Softwares - ${machineName} (${machine.software.length} softwares)`;
+
+        const softwareList = document.getElementById('software-list');
+        softwareList.innerHTML = '';
+
+        if (machine.software.length === 0) {
+            softwareList.innerHTML = '<p class="text-center">Nenhum software encontrado.</p>';
+        } else {
+            softwareList.innerHTML = `
+                <div class="table-responsive">
+                    <table class="table table-striped table-sm">
+                        <thead>
+                            <tr>
+                                <th>Nome</th>
+                                <th>Versão</th>
+                                <th>Fabricante</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            ${machine.software.map(sw => `
+                                <tr>
+                                    <td>${sw.nome || 'N/A'}</td>
+                                    <td><span class="badge bg-info">${sw.versao || 'N/A'}</span></td>
+                                    <td>${sw.fabricante || 'N/A'}</td>
+                                </tr>
+                            `).join('')}
+                        </tbody>
+                    </table>
+                </div>
+            `;
+        }
+
+        new bootstrap.Modal(document.getElementById('softwareModal')).show();
+    }
+
+    // ============================================================
+    // 3. FUNÇÕES DE AÇÃO (DELETE, RELATÓRIO)
+    // ============================================================
+
+    function deleteMachine(machineId, machineName) {
+        // Primeiro buscar informações detalhadas da máquina
+        fetch(`/api/machine/${machineId}`)
+        .then(response => response.json())
+        .then(machine => {
+            // Calcular dias inativo
+            const lastUpdate = new Date(machine.ultima_atualizacao);
+            const daysInactive = Math.floor((new Date() - lastUpdate) / (1000 * 60 * 60 * 24));
+            
+            const confirmationMessage = `
+                🚨 CONFIRMAÇÃO DE DELEÇÃO 🚨
+
+                Máquina: ${machineName}
+                ID: ${machineId}
+                Domínio: ${machine.dominio || 'N/A'}
+                Última atualização: ${lastUpdate.toLocaleString()}
+                Dias inativa: ${daysInactive} dias
+                Usuário: ${machine.usuario || 'N/A'}
+                IP: ${machine.ip || 'N/A'}
+                SO: ${machine.so || 'N/A'}
+
+                ⚠️  ESTA AÇÃO NÃO PODE SER DESFEITA!
+
+                Tem certeza que deseja deletar esta máquina?
+            `;
+
+            if (!confirm(confirmationMessage)) {
+                return;
+            }
+
+            // Se confirmou, fazer a deleção
+            return fetch(`/api/machine/${machineId}`, {
+                method: 'DELETE',
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            });
+        })
+        .then(response => response ? response.json() : {success: false})
+        .then(data => {
+            if (data.success) {
+                alert(`✅ ${data.message}\n\nMáquina "${data.deleted_machine.nome}" removida.`);
+                loadMachines(); // Recarregar a lista
+            } else if (data.message) {
+                alert(`❌ Erro: ${data.message}`);
+            }
+        })
+        .catch(error => {
+            alert(`❌ Erro ao deletar máquina: ${error.message}`);
+        });
+    }
+
+    function generateComplianceReport() {
+        const machinesOut = allMachines.filter(m => !m.em_compliance);
+        
+        if (machinesOut.length === 0) {
+            alert('✅ Todas as máquinas estão em compliance!');
+            return;
+        }
+        
+        let report = `🚨 RELATÓRIO DE COMPLIANCE - ${new Date().toLocaleDateString()}\n\n`;
+        report += `Máquinas pendentes: ${machinesOut.length}\n\n`;
+        
+        machinesOut.forEach(machine => {
+            const lastUpdate = new Date(machine.ultima_atualizacao);
+            const daysInactive = Math.floor((new Date() - lastUpdate) / (1000 * 60 * 60 * 24));
+            
+            report += `▸ ${machine.nome_computador}\n`;
+            report += `  Domínio: ${machine.dominio || 'N/A'}\n`;
+            report += `  Usuário: ${machine.usuario || 'N/A'}\n`;
+            report += `  SO: ${machine.so || 'N/A'}\n`;
+            report += `  RAM: ${machine.ram || 'N/A'}\n`;
+            report += `  Armazenamento: ${machine.armazenamento || 'N/A'}\n`;
+            report += `  IP: ${machine.ip || 'N/A'}\n`;
+            report += `  Última atualização: ${lastUpdate.toLocaleString()}\n`;
+            report += `  Dias sem atualizar: ${daysInactive}\n`;
+            report += `  Status: ${machine.online ? 'Online' : 'Offline'}\n\n`;
+        });
+        
+        report += `---\nTotal: ${machinesOut.length} máquina(s) pendente(s)\n`;
+        
+        // Copiar para área de transferência
+        navigator.clipboard.writeText(report).then(() => {
+            alert(`📋 Relatório copiado para a área de transferência!\n\n${machinesOut.length} máquina(s) pendente(s) em ${new Date().toLocaleDateString()}`);
+        }).catch(err => {
+            // Fallback se clipboard não funcionar
+            const textArea = document.createElement('textarea');
+            textArea.value = report;
+            document.body.appendChild(textArea);
+            textArea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textArea);
+            alert(`📋 Relatório copiado! ${machinesOut.length} máquina(s) pendente(s).\n\nCole no Excel/Email.`);
+        });
+    }
+
+    // ============================================================
+    // 4. FUNÇÕES UTILITÁRIAS (STATS, UI)
+    // ============================================================
+
+    function updateStats(machines) {
+        const total = machines.length;
+        const online = machines.filter(m => m.online).length;
+        const offline = total - online;
+        const totalSoftware = machines.reduce((sum, m) => sum + (m.software ? m.software.length : 0), 0);
+
+        document.getElementById('total-machines').textContent = total;
+        document.getElementById('online-machines').textContent = online;
+        document.getElementById('offline-machines').textContent = offline;
+        document.getElementById('total-software').textContent = totalSoftware;
+    }
+
+    function showLoading() {
+        document.getElementById('loading').style.display = 'block';
+        document.getElementById('machines-container').style.display = 'none';
+    }
+
+    function showContainer() {
+        document.getElementById('loading').style.display = 'none';
+        document.getElementById('machines-container').style.display = 'flex';
+    }
+
+    function showError() {
+        document.getElementById('error-message').style.display = 'block';
+        document.getElementById('loading').style.display = 'none';
+    }
+
+    function hideError() {
+        document.getElementById('error-message').style.display = 'none';
+    }
+
+    function updateConnectionStatus(connected) {
+        const status = document.getElementById('connection-status');
+        if (connected) {
+            status.className = 'badge bg-success';
+            status.innerHTML = '<i class="fas fa-wifi"></i> Conectado';
+        } else {
+            status.className = 'badge bg-danger';
+            status.innerHTML = '<i class="fas fa-plug"></i> Desconectado';
+        }
+    }
+
+    async function testAPI() {
+        try {
+            const response = await fetch('/api/test');
+            if (response.ok) {
+                alert('✅ API está funcionando corretamente!');
+            } else {
+                alert('❌ Erro na API: ' + response.status);
+            }
+        } catch (error) {
+            alert('❌ Não foi possível conectar à API: ' + error.message);
+        }
+    }
+
+    // ============================================================
+    // 5. FUNÇÃO PRINCIPAL (POR ÚLTIMO)
+    // ============================================================
+
+    async function loadMachines() {
+        showLoading();
+        hideError();
+
+        try {
+            const response = await fetch('/api/machines_dashboard');
+            
+            if (!response.ok) {
+                throw new Error(`Erro HTTP ${response.status} - ${response.statusText}`);
+            }
+            
+            allMachines = await response.json();
+            
+            if (!Array.isArray(allMachines)) {
+                throw new Error('Resposta da API não é um array válido');
+            }
+            
+            displayMachines(allMachines);
+            updateStats(allMachines);
+            createOSChart(allMachines);
+            createComplianceChart(allMachines);
+            updateConnectionStatus(true);
+            
+        } catch (error) {
+            console.error('Erro detalhado:', error);
+            showError();
+            updateConnectionStatus(false);
+            
+            const errorDiv = document.getElementById('error-message');
+            if (errorDiv) {
+                errorDiv.innerHTML = `
+                    <i class="fas fa-exclamation-triangle"></i> 
+                    <strong>Erro ao carregar dados:</strong> ${error.message}<br>
+                    <small>Verifique se o servidor está rodando em http://localhost:5000</small>
+                `;
+            }
+        }
+    }
+
+    // ============================================================
+    // 6. INICIALIZAÇÃO
+    // ============================================================
+
+    document.addEventListener('DOMContentLoaded', function() {
+        loadMachines();
+        setInterval(loadMachines, 30000);
+    });
+</script>
+</body>
+</html>

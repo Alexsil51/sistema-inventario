@@ -1,0 +1,34 @@
+INSTRUÇÕES PARA DEPLOY VIA GPO - INVENTÁRIO DE REDE
+
+SERVIDOR: 10.65.0.16
+COMPARTILHAMENTO: \\10.65.0.16\InventoryDeploy
+
+CONFIGURAÇÃO GPO:
+
+1. Computer Configuration → Policies → Windows Settings → Scripts → Startup
+   Script: \\10.65.0.16\InventoryDeploy\deploy.bat
+
+2. User Configuration → Policies → Windows Settings → Scripts → Logon (Opcional)
+   Script: C:\ProgramData\InventoryAgent\InventoryAgent.exe --silent
+
+ARQUIVOS DO DEPLOY:
+- InventoryAgent.exe → Executável principal
+- config.json → Configuração do agente
+- deploy.bat → Script de instalação
+
+CONFIGURAÇÃO DO AGENTE:
+- Executa toda segunda-feira às 02:00
+- Modo silencioso (sem interface)
+- Envia dados para: http://10.65.0.16:5000
+- Logs em: C:\ProgramData\InventoryAgent\inventory.log
+
+VERIFICAÇÃO:
+- Verificar se arquivos estão em C:\ProgramData\InventoryAgent\
+- Verificar tarefa agendada: "InventoryAgent Weekly Scan"
+- Testar execução manual: C:\ProgramData\InventoryAgent\InventoryAgent.exe
+
+SUPORTE:
+Em caso de problemas, verificar:
+1. Acesso ao compartilhamento \\10.65.0.16\InventoryDeploy\
+2. Firewall liberado para porta 5000
+3. Servidor API rodando (http://10.65.0.16:5000/health)

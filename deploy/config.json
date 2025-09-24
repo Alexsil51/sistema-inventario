@@ -1,0 +1,9 @@
+{
+    "server_url": "http://10.65.0.16:5000",
+    "api_endpoint": "/api/inventory",
+    "timeout": 15,
+    "retry_attempts": 2,
+    "backup_enabled": false,
+    "log_level": "ERROR",
+    "max_collection_time": 120
+}

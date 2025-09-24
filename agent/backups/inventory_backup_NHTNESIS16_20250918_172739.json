@@ -1,0 +1,995 @@
+{
+  "identificacao": {
+    "nome_computador": "NHTNESIS16",
+    "dominio": "transamerica.local",
+    "usuario_logado": "TRANSAMERICA\\asgama"
+  },
+  "softwares": [
+    {
+      "nome": "AddressBook",
+      "versao": "N/A",
+      "fabricante": "N/A",
+      "data_instalacao": null
+    },
+    {
+      "nome": "Connection Manager",
+      "versao": "N/A",
+      "fabricante": "N/A",
+      "data_instalacao": null
+    },
+    {
+      "nome": "Dell Pair",
+      "versao": "1.2.6",
+      "fabricante": "Dell Inc.",
+      "data_instalacao": null
+    },
+    {
+      "nome": "Dell Peripheral Core",
+      "versao": "2.1.0.356",
+      "fabricante": "Dell Inc.",
+      "data_instalacao": null
+    },
+    {
+      "nome": "DirectDrawEx",
+      "versao": "N/A",
+      "fabricante": "N/A",
+      "data_instalacao": null
+    },
+    {
+      "nome": "DXM_Runtime",
+      "versao": "N/A",
+      "fabricante": "N/A",
+      "data_instalacao": null
+    },
+    {
+      "nome": "Fontcore",
+      "versao": "N/A",
+      "fabricante": "N/A",
+      "data_instalacao": null
+    },
+    {
+      "nome": "Git",
+      "versao": "2.51.0",
+      "fabricante": "The Git Development Community",
+      "data_instalacao": "2025-08-28"
+    },
+    {
+      "nome": "IE40",
+      "versao": "N/A",
+      "fabricante": "N/A",
+      "data_instalacao": null
+    },
+    {
+      "nome": "IE4Data",
+      "versao": "N/A",
+      "fabricante": "N/A",
+      "data_instalacao": null
+    },
+    {
+      "nome": "IE5BAKEX",
+      "versao": "N/A",
+      "fabricante": "N/A",
+      "data_instalacao": null
+    },
+    {
+      "nome": "IEData",
+      "versao": "N/A",
+      "fabricante": "N/A",
+      "data_instalacao": null
+    },
+    {
+      "nome": "MobileOptionPack",
+      "versao": "N/A",
+      "fabricante": "N/A",
+      "data_instalacao": null
+    },
+    {
+      "nome": "Mozilla Firefox (x64 pt-BR)",
+      "versao": "142.0.1",
+      "fabricante": "Mozilla",
+      "data_instalacao": null
+    },
+    {
+      "nome": "Mozilla Maintenance Service",
+      "versao": "138.0.1",
+      "fabricante": "Mozilla",
+      "data_instalacao": null
+    },
+    {
+      "nome": "MPlayer2",
+      "versao": "N/A",
+      "fabricante": "N/A",
+      "data_instalacao": null
+    },
+    {
+      "nome": "mstsc-4b0a31aa-df6a-4307-9b47-d5cc50009643",
+      "versao": "N/A",
+      "fabricante": "Microsoft Corporation",
+      "data_instalacao": null
+    },
+    {
+      "nome": "Apache NetBeans IDE 22",
+      "versao": "22",
+      "fabricante": "Apache NetBeans",
+      "data_instalacao": null
+    },
+    {
+      "nome": "Microsoft 365 - en-us",
+      "versao": "16.0.19127.20222",
+      "fabricante": "Microsoft Corporation",
+      "data_instalacao": null
+    },
+    {
+      "nome": "Microsoft 365 - es-es",
+      "versao": "16.0.19127.20222",
+      "fabricante": "Microsoft Corporation",
+      "data_instalacao": null
+    },
+    {
+      "nome": "Microsoft 365 - fr-fr",
+      "versao": "16.0.19127.20222",
+      "fabricante": "Microsoft Corporation",
+      "data_instalacao": null
+    },
+    {
+      "nome": "Microsoft 365 - pt-br",
+      "versao": "16.0.19127.20222",
+      "fabricante": "Microsoft Corporation",
+      "data_instalacao": null
+    },
+    {
+      "nome": "Microsoft 365 Apps for enterprise - en-us",
+      "versao": "16.0.19127.20222",
+      "fabricante": "Microsoft Corporation",
+      "data_instalacao": null
+    },
+    {
+      "nome": "Microsoft 365 Apps para Grandes Empresas - pt-br",
+      "versao": "16.0.19127.20222",
+      "fabricante": "Microsoft Corporation",
+      "data_instalacao": null
+    },
+    {
+      "nome": "Microsoft OneDrive",
+      "versao": "25.164.0824.0003",
+      "fabricante": "Microsoft Corporation",
+      "data_instalacao": null
+    },
+    {
+      "nome": "Microsoft OneNote - en-us",
+      "versao": "16.0.19127.20222",
+      "fabricante": "Microsoft Corporation",
+      "data_instalacao": null
+    },
+    {
+      "nome": "Microsoft OneNote - es-es",
+      "versao": "16.0.19127.20222",
+      "fabricante": "Microsoft Corporation",
+      "data_instalacao": null
+    },
+    {
+      "nome": "Microsoft OneNote - fr-fr",
+      "versao": "16.0.19127.20222",
+      "fabricante": "Microsoft Corporation",
+      "data_instalacao": null
+    },
+    {
+      "nome": "Microsoft OneNote - pt-br",
+      "versao": "16.0.19127.20222",
+      "fabricante": "Microsoft Corporation",
+      "data_instalacao": null
+    },
+    {
+      "nome": "SchedulingAgent",
+      "versao": "N/A",
+      "fabricante": "N/A",
+      "data_instalacao": null
+    },
+    {
+      "nome": "WIC",
+      "versao": "N/A",
+      "fabricante": "N/A",
+      "data_instalacao": null
+    },
+    {
+      "nome": "Microsoft Visual C++ 2013 x64 Additional Runtime - 12.0.40664",
+      "versao": "12.0.40664",
+      "fabricante": "Microsoft Corporation",
+      "data_instalacao": "2025-07-24"
+    },
+    {
+      "nome": "{091B2FD3-A3C7-4E3F-8633-02AE6F8306BB}",
+      "versao": "N/A",
+      "fabricante": "N/A",
+      "data_instalacao": null
+    },
+    {
+      "nome": "Dell Optimizer",
+      "versao": "4.2.4.0",
+      "fabricante": "Dell",
+      "data_instalacao": "2025-04-24"
+    },
+    {
+      "nome": "Microsoft Visual C++ 2022 X64 Additional Runtime - 14.38.33135",
+      "versao": "14.38.33135",
+      "fabricante": "Microsoft Corporation",
+      "data_instalacao": "2025-05-13"
+    },
+    {
+      "nome": "Dell SupportAssist",
+      "versao": "4.8.2.29006",
+      "fabricante": "Dell Inc.",
+      "data_instalacao": "2025-05-12"
+    },
+    {
+      "nome": "Microsoft .NET Runtime - 8.0.20 (x64)",
+      "versao": "64.80.39230",
+      "fabricante": "Microsoft Corporation",
+      "data_instalacao": "2025-09-09"
+    },
+    {
+      "nome": "{4EA9855C-3339-4AE3-977B-6DF8A369469D}",
+      "versao": "N/A",
+      "fabricante": "N/A",
+      "data_instalacao": null
+    },
+    {
+      "nome": "Microsoft Visual C++ 2013 x64 Minimum Runtime - 12.0.40664",
+      "versao": "12.0.40664",
+      "fabricante": "Microsoft Corporation",
+      "data_instalacao": "2025-07-24"
+    },
+    {
+      "nome": "Microsoft Visual C++ 2008 Redistributable - x64 9.0.30729",
+      "versao": "9.0.30729",
+      "fabricante": "Microsoft Corporation",
+      "data_instalacao": "2025-07-24"
+    },
+    {
+      "nome": "Dell Trusted Device",
+      "versao": "7.0.3.0",
+      "fabricante": "Dell, Inc",
+      "data_instalacao": "2025-05-12"
+    },
+    {
+      "nome": "Dell SupportAssist Remediation",
+      "versao": "5.5.12.0",
+      "fabricante": "Dell Inc.",
+      "data_instalacao": "2025-04-24"
+    },
+    {
+      "nome": "MySQL Workbench 8.0 CE",
+      "versao": "8.0.38",
+      "fabricante": "Oracle Corporation",
+      "data_instalacao": "2025-09-02"
+    },
+    {
+      "nome": "Microsoft Visual C++ 2008 Redistributable - x64 9.0.30729.6161",
+      "versao": "9.0.30729.6161",
+      "fabricante": "Microsoft Corporation",
+      "data_instalacao": "2025-08-22"
+    },
+    {
+      "nome": "CrowdStrike Firmware Analysis",
+      "versao": "7.14.18456.0",
+      "fabricante": "CrowdStrike, Inc.",
+      "data_instalacao": "2025-05-21"
+    },
+    {
+      "nome": "Microsoft Windows Desktop Runtime - 6.0.36 (x64)",
+      "versao": "48.144.23186",
+      "fabricante": "Microsoft Corporation",
+      "data_instalacao": "2025-08-22"
+    },
+    {
+      "nome": "Python 3.13.7 Test Suite (64-bit)",
+      "versao": "3.13.7150.0",
+      "fabricante": "Python Software Foundation",
+      "data_instalacao": "2025-09-02"
+    },
+    {
+      "nome": "Dell Command | Update for Windows Universal",
+      "versao": "5.4.1",
+      "fabricante": "Dell Inc.",
+      "data_instalacao": "2025-04-24"
+    },
+    {
+      "nome": "Active Directory Rights Management Services Client 2.1",
+      "versao": "1.0.1154.0",
+      "fabricante": "Microsoft Corporation",
+      "data_instalacao": "2025-05-12"
+    },
+    {
+      "nome": "MySQL Server 8.0",
+      "versao": "8.0.39",
+      "fabricante": "Oracle Corporation",
+      "data_instalacao": "2025-09-02"
+    },
+    {
+      "nome": "Office 16 Click-to-Run Licensing Component",
+      "versao": "16.0.19029.20184",
+      "fabricante": "Microsoft Corporation",
+      "data_instalacao": "2025-08-14"
+    },
+    {
+      "nome": "Office 16 Click-to-Run Extensibility Component",
+      "versao": "16.0.19127.20154",
+      "fabricante": "Microsoft Corporation",
+      "data_instalacao": "2025-08-26"
+    },
+    {
+      "nome": "Office 16 Click-to-Run Localization Component",
+      "versao": "16.0.19127.20154",
+      "fabricante": "Microsoft Corporation",
+      "data_instalacao": "2025-08-26"
+    },
+    {
+      "nome": "Office 16 Click-to-Run Localization Component",
+      "versao": "16.0.19127.20154",
+      "fabricante": "Microsoft Corporation",
+      "data_instalacao": "2025-08-26"
+    },
+    {
+      "nome": "Office 16 Click-to-Run Localization Component",
+      "versao": "16.0.19127.20154",
+      "fabricante": "Microsoft Corporation",
+      "data_instalacao": "2025-08-26"
+    },
+    {
+      "nome": "FortiClient",
+      "versao": "5.6.6.1167",
+      "fabricante": "Fortinet Inc",
+      "data_instalacao": "2025-05-12"
+    },
+    {
+      "nome": "CrowdStrike Device Control",
+      "versao": "7.10.18083.0",
+      "fabricante": "CrowdStrike, Inc.",
+      "data_instalacao": "2025-05-21"
+    },
+    {
+      "nome": "{93D141B9-9B5E-485B-8ED1-97DE741EE768}",
+      "versao": "N/A",
+      "fabricante": "N/A",
+      "data_instalacao": null
+    },
+    {
+      "nome": "Oracle VM VirtualBox 7.0.20",
+      "versao": "7.0.20",
+      "fabricante": "Oracle and/or its affiliates",
+      "data_instalacao": "2025-08-06"
+    },
+    {
+      "nome": "Python 3.13.7 Development Libraries (64-bit)",
+      "versao": "3.13.7150.0",
+      "fabricante": "Python Software Foundation",
+      "data_instalacao": "2025-09-02"
+    },
+    {
+      "nome": "Dell Core Services",
+      "versao": "1.10.39.0",
+      "fabricante": "Dell, Inc.",
+      "data_instalacao": "2025-08-22"
+    },
+    {
+      "nome": "Python 3.13.7 Standard Library (64-bit)",
+      "versao": "3.13.7150.0",
+      "fabricante": "Python Software Foundation",
+      "data_instalacao": "2025-09-02"
+    },
+    {
+      "nome": "Python 3.13.7 Tcl/Tk Support (64-bit)",
+      "versao": "3.13.7150.0",
+      "fabricante": "Python Software Foundation",
+      "data_instalacao": "2025-09-02"
+    },
+    {
+      "nome": "Microsoft Teams Meeting Add-in for Microsoft Office",
+      "versao": "1.25.18302",
+      "fabricante": "Microsoft",
+      "data_instalacao": "2025-07-28"
+    },
+    {
+      "nome": "Microsoft .NET Host FX Resolver - 6.0.36 (x64)",
+      "versao": "48.144.23141",
+      "fabricante": "Microsoft Corporation",
+      "data_instalacao": "2025-08-22"
+    },
+    {
+      "nome": "Microsoft Visual C++ 2022 X64 Minimum Runtime - 14.38.33135",
+      "versao": "14.38.33135",
+      "fabricante": "Microsoft Corporation",
+      "data_instalacao": "2025-05-13"
+    },
+    {
+      "nome": "Java(TM) SE Development Kit 22.0.2 (64-bit)",
+      "versao": "22.0.2.0",
+      "fabricante": "Oracle Corporation",
+      "data_instalacao": "2025-06-04"
+    },
+    {
+      "nome": "Adobe Acrobat (64-bit)",
+      "versao": "25.001.20693",
+      "fabricante": "Adobe",
+      "data_instalacao": "2025-09-15"
+    },
+    {
+      "nome": "Intel(R) Connectivity Performance Suite for ExpressConnect",
+      "versao": "30.24.683",
+      "fabricante": "Intel Corporation",
+      "data_instalacao": "2025-04-24"
+    },
+    {
+      "nome": "PowerShell 7-x64",
+      "versao": "7.5.3.0",
+      "fabricante": "Microsoft Corporation",
+      "data_instalacao": "2025-09-11"
+    },
+    {
+      "nome": "Microsoft .NET Host FX Resolver - 8.0.20 (x64)",
+      "versao": "64.80.39230",
+      "fabricante": "Microsoft Corporation",
+      "data_instalacao": "2025-09-09"
+    },
+    {
+      "nome": "Python 3.13.7 Core Interpreter (64-bit)",
+      "versao": "3.13.7150.0",
+      "fabricante": "Python Software Foundation",
+      "data_instalacao": "2025-09-02"
+    },
+    {
+      "nome": "Microsoft .NET Runtime - 6.0.36 (x64)",
+      "versao": "48.144.23141",
+      "fabricante": "Microsoft Corporation",
+      "data_instalacao": "2025-08-22"
+    },
+    {
+      "nome": "Python 3.13.7 pip Bootstrap (64-bit)",
+      "versao": "3.13.7150.0",
+      "fabricante": "Python Software Foundation",
+      "data_instalacao": "2025-09-02"
+    },
+    {
+      "nome": "Python 3.13.7 Documentation (64-bit)",
+      "versao": "3.13.7150.0",
+      "fabricante": "Python Software Foundation",
+      "data_instalacao": "2025-09-02"
+    },
+    {
+      "nome": "CrowdStrike Sensor Platform",
+      "versao": "7.27.19907.0",
+      "fabricante": "CrowdStrike, Inc.",
+      "data_instalacao": "2025-08-06"
+    },
+    {
+      "nome": "Microsoft Windows Desktop Runtime - 8.0.20 (x64)",
+      "versao": "64.80.39251",
+      "fabricante": "Microsoft Corporation",
+      "data_instalacao": "2025-09-09"
+    },
+    {
+      "nome": "Node.js",
+      "versao": "18.16.1",
+      "fabricante": "Node.js Foundation",
+      "data_instalacao": "2025-08-26"
+    },
+    {
+      "nome": "Microsoft .NET Host - 6.0.36 (x64)",
+      "versao": "48.144.23141",
+      "fabricante": "Microsoft Corporation",
+      "data_instalacao": "2025-08-22"
+    },
+    {
+      "nome": "DellOptimizerUI",
+      "versao": "4.2.4.0",
+      "fabricante": "Dell",
+      "data_instalacao": "2025-04-24"
+    },
+    {
+      "nome": "Python 3.13.7 Executables (64-bit)",
+      "versao": "3.13.7150.0",
+      "fabricante": "Python Software Foundation",
+      "data_instalacao": "2025-09-02"
+    },
+    {
+      "nome": "Dell.Digital.Delivery-64Bit",
+      "versao": "3.3.19.0",
+      "fabricante": "Dell Technologies, Inc.",
+      "data_instalacao": "2025-05-13"
+    },
+    {
+      "nome": "Microsoft .NET Host - 8.0.20 (x64)",
+      "versao": "64.80.39230",
+      "fabricante": "Microsoft Corporation",
+      "data_instalacao": "2025-09-09"
+    },
+    {
+      "nome": "Microsoft ASP.NET Core 8.0.20 Shared Framework (x64)",
+      "versao": "8.0.20.25420",
+      "fabricante": "Microsoft Corporation",
+      "data_instalacao": "2025-09-09"
+    },
+    {
+      "nome": "Dell Optimizer",
+      "versao": "6.0.2.0",
+      "fabricante": "Dell",
+      "data_instalacao": "2025-05-13"
+    },
+    {
+      "nome": "Dell SupportAssist OS Recovery Plugin for Dell Update",
+      "versao": "5.5.13.0",
+      "fabricante": "Dell Inc.",
+      "data_instalacao": "2025-05-12"
+    },
+    {
+      "nome": "AddressBook",
+      "versao": "N/A",
+      "fabricante": "N/A",
+      "data_instalacao": null
+    },
+    {
+      "nome": "Connection Manager",
+      "versao": "N/A",
+      "fabricante": "N/A",
+      "data_instalacao": null
+    },
+    {
+      "nome": "DirectDrawEx",
+      "versao": "N/A",
+      "fabricante": "N/A",
+      "data_instalacao": null
+    },
+    {
+      "nome": "DXM_Runtime",
+      "versao": "N/A",
+      "fabricante": "N/A",
+      "data_instalacao": null
+    },
+    {
+      "nome": "Fontcore",
+      "versao": "N/A",
+      "fabricante": "N/A",
+      "data_instalacao": null
+    },
+    {
+      "nome": "Google Chrome",
+      "versao": "140.0.7339.128",
+      "fabricante": "Google LLC",
+      "data_instalacao": "2025-09-12"
+    },
+    {
+      "nome": "IE40",
+      "versao": "N/A",
+      "fabricante": "N/A",
+      "data_instalacao": null
+    },
+    {
+      "nome": "IE4Data",
+      "versao": "N/A",
+      "fabricante": "N/A",
+      "data_instalacao": null
+    },
+    {
+      "nome": "IE5BAKEX",
+      "versao": "N/A",
+      "fabricante": "N/A",
+      "data_instalacao": null
+    },
+    {
+      "nome": "IEData",
+      "versao": "N/A",
+      "fabricante": "N/A",
+      "data_instalacao": null
+    },
+    {
+      "nome": "Microsoft Edge",
+      "versao": "141.0.3537.25",
+      "fabricante": "Microsoft Corporation",
+      "data_instalacao": "2025-09-17"
+    },
+    {
+      "nome": "Microsoft Edge Update",
+      "versao": "1.3.199.11",
+      "fabricante": "N/A",
+      "data_instalacao": null
+    },
+    {
+      "nome": "Microsoft Edge WebView2 Runtime",
+      "versao": "140.0.3485.66",
+      "fabricante": "Microsoft Corporation",
+      "data_instalacao": "2025-09-15"
+    },
+    {
+      "nome": "MobileOptionPack",
+      "versao": "N/A",
+      "fabricante": "N/A",
+      "data_instalacao": null
+    },
+    {
+      "nome": "MPlayer2",
+      "versao": "N/A",
+      "fabricante": "N/A",
+      "data_instalacao": null
+    },
+    {
+      "nome": "SchedulingAgent",
+      "versao": "N/A",
+      "fabricante": "N/A",
+      "data_instalacao": null
+    },
+    {
+      "nome": "Tftpd64 Standalone Edition (remove only)",
+      "versao": "N/A",
+      "fabricante": "N/A",
+      "data_instalacao": null
+    },
+    {
+      "nome": "WIC",
+      "versao": "N/A",
+      "fabricante": "N/A",
+      "data_instalacao": null
+    },
+    {
+      "nome": "Microsoft Visual C++ 2013 Redistributable (x64) - 12.0.40664",
+      "versao": "12.0.40664.0",
+      "fabricante": "Microsoft Corporation",
+      "data_instalacao": null
+    },
+    {
+      "nome": "Microsoft Windows Desktop Runtime - 6.0.36 (x64)",
+      "versao": "6.0.36.34217",
+      "fabricante": "Microsoft Corporation",
+      "data_instalacao": null
+    },
+    {
+      "nome": "TSPrint Client",
+      "versao": "3.2.0.7",
+      "fabricante": "TerminalWorks, Ltd.",
+      "data_instalacao": "2025-05-12"
+    },
+    {
+      "nome": "PowerShell 7.5.3.0-x64",
+      "versao": "7.5.3.0",
+      "fabricante": "Microsoft Corporation",
+      "data_instalacao": null
+    },
+    {
+      "nome": "Microsoft Visual C++ 2013 x86 Minimum Runtime - 12.0.21005",
+      "versao": "12.0.21005",
+      "fabricante": "Microsoft Corporation",
+      "data_instalacao": "2025-07-24"
+    },
+    {
+      "nome": "MySQL Installer",
+      "versao": "1.6.11.0",
+      "fabricante": "Oracle Corporation",
+      "data_instalacao": "2025-09-02"
+    },
+    {
+      "nome": "Microsoft Visual C++ 2010  x86 Redistributable - 10.0.30319",
+      "versao": "10.0.30319",
+      "fabricante": "Microsoft Corporation",
+      "data_instalacao": "2025-08-22"
+    },
+    {
+      "nome": "{196BB40D-1578-3D01-B289-BEFC77A11A1E}.KB2151757",
+      "versao": "N/A",
+      "fabricante": "N/A",
+      "data_instalacao": null
+    },
+    {
+      "nome": "{196BB40D-1578-3D01-B289-BEFC77A11A1E}.KB982573",
+      "versao": "N/A",
+      "fabricante": "N/A",
+      "data_instalacao": null
+    },
+    {
+      "nome": "Dell Display and Peripheral Manager",
+      "versao": "2.1.0.24",
+      "fabricante": "Dell Technologies",
+      "data_instalacao": "2025-08-22"
+    },
+    {
+      "nome": "Microsoft Intune Management Extension",
+      "versao": "1.94.153.0",
+      "fabricante": "Microsoft Corporation",
+      "data_instalacao": "2025-09-15"
+    },
+    {
+      "nome": "Dell Optimizer Core",
+      "versao": "4.2.4.0",
+      "fabricante": "Dell Inc.",
+      "data_instalacao": null
+    },
+    {
+      "nome": "Dell SupportAssist OS Recovery Plugin for Dell Update",
+      "versao": "5.5.13.0",
+      "fabricante": "Dell Inc.",
+      "data_instalacao": null
+    },
+    {
+      "nome": "Dell SupportAssist Remediation",
+      "versao": "5.5.12.0",
+      "fabricante": "Dell Inc.",
+      "data_instalacao": null
+    },
+    {
+      "nome": "Microsoft Visual C++ 2019 X86 Minimum Runtime - 14.27.29112",
+      "versao": "14.27.29112",
+      "fabricante": "Microsoft Corporation",
+      "data_instalacao": "2025-07-24"
+    },
+    {
+      "nome": "Java Auto Updater",
+      "versao": "2.8.451.10",
+      "fabricante": "Oracle Corporation",
+      "data_instalacao": "2025-06-02"
+    },
+    {
+      "nome": "Microsoft Visual C++ 2019 X86 Additional Runtime - 14.27.29112",
+      "versao": "14.27.29112",
+      "fabricante": "Microsoft Corporation",
+      "data_instalacao": "2025-07-24"
+    },
+    {
+      "nome": "Intel® Software Installer",
+      "versao": "23.110.0.5",
+      "fabricante": "Intel Corporation",
+      "data_instalacao": null
+    },
+    {
+      "nome": "Java 8 Update 451",
+      "versao": "8.0.4510.10",
+      "fabricante": "Oracle Corporation",
+      "data_instalacao": "2025-06-02"
+    },
+    {
+      "nome": "Python Launcher",
+      "versao": "3.13.7150.0",
+      "fabricante": "Python Software Foundation",
+      "data_instalacao": "2025-09-02"
+    },
+    {
+      "nome": "Microsoft Visual C++ 2008 Redistributable - x86 9.0.30729.6161",
+      "versao": "9.0.30729.6161",
+      "fabricante": "Microsoft Corporation",
+      "data_instalacao": "2025-07-24"
+    },
+    {
+      "nome": "CrowdStrike Windows Sensor",
+      "versao": "7.27.19907.0",
+      "fabricante": "CrowdStrike, Inc.",
+      "data_instalacao": "2025-08-06"
+    },
+    {
+      "nome": "Adobe Refresh Manager",
+      "versao": "1.8.0",
+      "fabricante": "Adobe Systems Incorporated",
+      "data_instalacao": "2025-09-05"
+    },
+    {
+      "nome": "Four Js Genero Desktop Client 2.40.21",
+      "versao": "2.40.21",
+      "fabricante": "Four Js Development Tools Europe Ltd.",
+      "data_instalacao": "2025-05-15"
+    },
+    {
+      "nome": "Web Plugins",
+      "versao": "4.0.2402.3",
+      "fabricante": "N/A",
+      "data_instalacao": "2025-07-24"
+    },
+    {
+      "nome": "Microsoft Visual C++ 2015-2019 Redistributable (x86) - 14.27.29112",
+      "versao": "14.27.29112.0",
+      "fabricante": "Microsoft Corporation",
+      "data_instalacao": null
+    },
+    {
+      "nome": "Microsoft Visual C++ 2015-2022 Redistributable (x64) - 14.38.33135",
+      "versao": "14.38.33135.0",
+      "fabricante": "Microsoft Corporation",
+      "data_instalacao": null
+    },
+    {
+      "nome": "Dell Optimizer",
+      "versao": "6.0.2.0",
+      "fabricante": "Dell Technologies Inc.",
+      "data_instalacao": null
+    },
+    {
+      "nome": "iVMS-4200",
+      "versao": "3.12.0.7",
+      "fabricante": "Hangzhou Hikvision Digital Technology Co., Ltd.",
+      "data_instalacao": null
+    },
+    {
+      "nome": "Microsoft Windows Desktop Runtime - 8.0.20 (x64)",
+      "versao": "8.0.20.35221",
+      "fabricante": "Microsoft Corporation",
+      "data_instalacao": null
+    },
+    {
+      "nome": "Realtek Audio Driver",
+      "versao": "6.0.9706.1",
+      "fabricante": "Realtek Semiconductor Corp.",
+      "data_instalacao": "2025-05-12"
+    },
+    {
+      "nome": "Microsoft Visual C++ 2013 Redistributable (x86) - 12.0.30501",
+      "versao": "12.0.30501.0",
+      "fabricante": "Microsoft Corporation",
+      "data_instalacao": null
+    },
+    {
+      "nome": "Microsoft Visual C++ 2013 x86 Additional Runtime - 12.0.21005",
+      "versao": "12.0.21005",
+      "fabricante": "Microsoft Corporation",
+      "data_instalacao": "2025-07-24"
+    },
+    {
+      "nome": "Microsoft ASP.NET Core 8.0.20 - Shared Framework (x64)",
+      "versao": "8.0.20.25420",
+      "fabricante": "Microsoft Corporation",
+      "data_instalacao": null
+    }
+  ],
+  "sistema_operacional": {
+    "nome": "Microsoft Windows 11 Pro",
+    "versao": "10.0.26100",
+    "service_pack": 0,
+    "serial": "00355-62316-60974-AAOEM"
+  },
+  "processador": {
+    "modelo": "13th Gen Intel(R) Core(TM) i7-1355U",
+    "velocidade_mhz": 1700,
+    "quantidade": 10
+  },
+  "memoria": {
+    "capacidade_total_gb": 16.0,
+    "slots_utilizados": 1,
+    "velocidade_mhz": 5600
+  },
+  "rede": {
+    "ip_address": "10.65.0.16",
+    "placas": [
+      {
+        "descricao": "Realtek PCIe GbE Family Controller",
+        "mac_address": "10:98:19:EA:3E:1D",
+        "ip_address": "10.65.0.16",
+        "mascara": "255.255.255.0",
+        "gateway": "10.65.0.1"
+      },
+      {
+        "descricao": "VirtualBox Host-Only Ethernet Adapter",
+        "mac_address": "0A:00:27:00:00:16",
+        "ip_address": "192.168.56.1",
+        "mascara": "255.255.255.0",
+        "gateway": null
+      }
+    ]
+  },
+  "discos": [
+    {
+      "unidade": "C:\\",
+      "tipo": "NTFS",
+      "tamanho_gb": 473.95,
+      "espaco_livre_gb": 222.81,
+      "sistema_arquivos": "NTFS"
+    },
+    {
+      "unidade": "C:",
+      "tipo": "Disco Fixo",
+      "tamanho_gb": 473.95,
+      "espaco_livre_gb": 222.81,
+      "sistema_arquivos": "NTFS"
+    },
+    {
+      "unidade": "Z:",
+      "tipo": "Rede",
+      "tamanho_gb": 302.94,
+      "espaco_livre_gb": 108.06,
+      "sistema_arquivos": "ReFS"
+    }
+  ],
+  "ultimo_logon": {
+    "usuario": "TRANSAMERICA\\asgama",
+    "data_hora": "2025-09-17 19:06:46"
+  },
+  "bios": {
+    "versao": "1.15.0",
+    "fabricante": "Dell Inc.",
+    "data_release": "2025-06-30"
+  },
+  "controladores": [
+    {
+      "tipo": "USB",
+      "nome": "Intel(R) USB 3.10 eXtensible Host Controller - 1.20 (Microsoft)",
+      "descricao": "Controlador Host Compatível com USB xHCI"
+    },
+    {
+      "tipo": "USB",
+      "nome": "USB Composite Device",
+      "descricao": "USB Composite Device"
+    },
+    {
+      "tipo": "USB",
+      "nome": "Roteador Host USB4 (TM) (Microsoft)",
+      "descricao": "Roteador Host USB4 (TM) (Microsoft)"
+    },
+    {
+      "tipo": "USB",
+      "nome": "Intel(R) USB 3.20 eXtensible Host Controller - 1.20 (Microsoft)",
+      "descricao": "Controlador Host Compatível com USB xHCI"
+    }
+  ],
+  "perifericos_entrada": [
+    {
+      "tipo": "Teclado",
+      "nome": "Aperfeiçoado (101 ou 102 teclas)",
+      "descricao": "Dispositivo de teclado HID"
+    },
+    {
+      "tipo": "Teclado",
+      "nome": "Aperfeiçoado (101 ou 102 teclas)",
+      "descricao": "Dispositivo de Entrada USB"
+    },
+    {
+      "tipo": "Teclado",
+      "nome": "Aperfeiçoado (101 ou 102 teclas)",
+      "descricao": "Dispositivo de teclado HID"
+    },
+    {
+      "tipo": "Teclado",
+      "nome": "Aperfeiçoado (101 ou 102 teclas)",
+      "descricao": "Teclado Padrão PS/2"
+    },
+    {
+      "tipo": "Teclado",
+      "nome": "Aperfeiçoado (101 ou 102 teclas)",
+      "descricao": "Dispositivo de teclado HID"
+    },
+    {
+      "tipo": "Mouse",
+      "nome": "Dispositivo de Entrada USB",
+      "descricao": "Dispositivo de Entrada USB"
+    },
+    {
+      "tipo": "Mouse",
+      "nome": "Mouse compatível com HID",
+      "descricao": "Mouse compatível com HID"
+    },
+    {
+      "tipo": "Mouse",
+      "nome": "Mouse compatível com HID",
+      "descricao": "Mouse compatível com HID"
+    },
+    {
+      "tipo": "Mouse",
+      "nome": "Mouse compatível com HID",
+      "descricao": "Mouse compatível com HID"
+    }
+  ],
+  "monitores": [
+    {
+      "fabricante": "(Tipos de monitor padrão)",
+      "tipo": "Monitor Genérico PnP",
+      "descricao": "Monitor Genérico PnP"
+    }
+  ],
+  "impressoras": [
+    {
+      "nome": "OneNote (Desktop)",
+      "porta": "nul:"
+    },
+    {
+      "nome": "Microsoft Print to PDF",
+      "porta": "PORTPROMPT:"
+    },
+    {
+      "nome": "\\\\HTTIOPERACAO\\LEXMARK MONO SISTEMAS",
+      "porta": "LEXMARK MONO SISTEMAS"
+    }
+  ],
+  "timestamp_coleta": "2025-09-18T17:27:28.021328"
+}

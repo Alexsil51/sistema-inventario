@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard de Inventário</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .online { color: green; }
+        .offline { color: red; }
+        .machine-card { transition: all 0.3s; }
+        .machine-card:hover { transform: translateY(-2px); box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+        .software-badge { font-size: 0.8em; }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <i class="fas fa-server"></i> Sistema de Inventário
+            </a>
+            <span class="navbar-text">
+                <span id="connection-status" class="badge bg-success">
+                    <i class="fas fa-wifi"></i> Conectado
+                </span>
+            </span>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-12">
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                    <h1>Dashboard de Máquinas</h1>
+                    <div>
+                        <button class="btn btn-primary" onclick="loadMachines()">
+                            <i class="fas fa-sync-alt"></i> Atualizar
+                        </button>
+                        <button class="btn btn-outline-secondary" onclick="testAPI()">
+                            <i class="fas fa-bolt"></i> Testar API
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Estatísticas -->
+                <div class="row mb-4">
+                    <div class="col-md-3">
+                        <div class="card bg-primary text-white">
+                            <div class="card-body text-center">
+                                <h5><i class="fas fa-desktop"></i> Total</h5>
+                                <h3 id="total-machines">0</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card bg-success text-white">
+                            <div class="card-body text-center">
+                                <h5><i class="fas fa-wifi"></i> Online</h5>
+                                <h3 id="online-machines">0</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card bg-warning text-white">
+                            <div class="card-body text-center">
+                                <h5><i class="fas fa-plug"></i> Offline</h5>
+                                <h3 id="offline-machines">0</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card bg-info text-white">
+                            <div class="card-body text-center">
+                                <h5><i class="fas fa-microchip"></i> Softwares</h5>
+                                <h3 id="total-software">0</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Loading -->
+                <div id="loading" class="text-center">
+                    <div class="spinner-border text-primary" role="status">
+                        <span class="visually-hidden">Carregando...</span>
+                    </div>
+                    <p>Carregando máquinas...</p>
+                </div>
+
+                <!-- Máquinas -->
+                <div id="machines-container" class="row" style="display: none;"></div>
+
+                <!-- Mensagens de erro -->
+                <div id="error-message" class="alert alert-danger" style="display: none;">
+                    Erro ao carregar dados. Verifique se o servidor está rodando.
+                </div>
+
+                <!-- Modal de Softwares -->
+                <div class="modal fade" id="softwareModal" tabindex="-1">
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Softwares Instalados</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div id="software-list"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        let allMachines = [];
+
+        // Função para carregar máquinas
+        async function loadMachines() {
+            showLoading();
+            hideError();
+
+            try {
+                const response = await fetch('/api/machines_dashboard');
+                if (!response.ok) throw new Error('Erro na resposta');
+                
+                allMachines = await response.json();
+                displayMachines(allMachines);
+                updateStats(allMachines);
+                updateConnectionStatus(true);
+                
+            } catch (error) {
+                console.error('Erro:', error);
+                showError();
+                updateConnectionStatus(false);
+            }
+        }
+
+        // Função para exibir máquinas
+        function displayMachines(machines) {
+            const container = document.getElementById('machines-container');
+            container.innerHTML = '';
+
+            if (machines.length === 0) {
+                container.innerHTML = `
+                    <div class="col-12">
+                        <div class="alert alert-info">
+                            <i class="fas fa-info-circle"></i>
+                            Nenhuma máquina encontrada. Execute o agente em alguma máquina.
+                        </div>
+                    </div>
+                `;
+                showContainer();
+                return;
+            }
+
+            machines.forEach(machine => {
+                const isOnline = machine.online;
+                const lastUpdate = new Date(machine.ultima_atualizacao).toLocaleString();
+                const softwareCount = machine.software ? machine.software.length : 0;
+                
+                const card = `
+                    <div class="col-md-6 col-lg-4 mb-4">
+                        <div class="card machine-card">
+                            <div class="card-header d-flex justify-content-between align-items-center">
+                                <span class="badge ${isOnline ? 'bg-success' : 'bg-danger'}">
+                                    <i class="fas ${isOnline ? 'fa-wifi' : 'fa-plug'}"></i>
+                                    ${isOnline ? 'Online' : 'Offline'}
+                                </span>
+                                <small>#${machine.id}</small>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    <i class="fas fa-computer"></i> ${machine.nome_computador}
+                                </h5>
+                                <p class="card-text">
+                                    <strong>Usuário:</strong> ${machine.usuario || 'N/A'}<br>
+                                    <strong>IP:</strong> ${machine.ip || 'N/A'}<br>
+                                    <strong>SO:</strong> ${machine.so || 'N/A'}<br>
+                                    <strong>RAM:</strong> ${machine.ram || 'N/A'}<br>
+                                    <strong>Armazenamento:</strong> ${machine.armazenamento || 'N/A'}<br>
+                                    <strong>Última atualização:</strong> ${lastUpdate}
+                                </p>
+                                <div class="d-flex justify-content-between">
+                                    <button class="btn btn-sm btn-outline-primary" 
+                                            onclick="showSoftware(${machine.id})">
+                                        <i class="fas fa-list"></i> Softwares (${softwareCount})
+                                    </button>
+                                    <span class="badge bg-secondary software-badge">
+                                        ${machine.dominio || 'Sem domínio'}
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                container.innerHTML += card;
+            });
+
+            showContainer();
+        }
+
+        // Função para mostrar softwares
+        function showSoftware(machineId) {
+            const machine = allMachines.find(m => m.id === machineId);
+            if (!machine || !machine.software) return;
+
+            const softwareList = document.getElementById('software-list');
+            softwareList.innerHTML = '';
+
+            if (machine.software.length === 0) {
+                softwareList.innerHTML = '<p>Nenhum software encontrado.</p>';
+            } else {
+                softwareList.innerHTML = `
+                    <div class="table-responsive">
+                        <table class="table table-striped table-sm">
+                            <thead>
+                                <tr>
+                                    <th>Nome</th>
+                                    <th>Versão</th>
+                                    <th>Fabricante</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                ${machine.software.map(sw => `
+                                    <tr>
+                                        <td>${sw.nome || 'N/A'}</td>
+                                        <td>${sw.versao || 'N/A'}</td>
+                                        <td>${sw.fabricante || 'N/A'}</td>
+                                    </tr>
+                                `).join('')}
+                            </tbody>
+                        </table>
+                    </div>
+                `;
+            }
+
+            new bootstrap.Modal(document.getElementById('softwareModal')).show();
+        }
+
+        // Função para atualizar estatísticas
+        function updateStats(machines) {
+            const total = machines.length;
+            const online = machines.filter(m => m.online).length;
+            const offline = total - online;
+            const totalSoftware = machines.reduce((sum, m) => sum + (m.software ? m.software.length : 0), 0);
+
+            document.getElementById('total-machines').textContent = total;
+            document.getElementById('online-machines').textContent = online;
+            document.getElementById('offline-machines').textContent = offline;
+            document.getElementById('total-software').textContent = totalSoftware;
+        }
+
+        // Funções auxiliares de UI
+        function showLoading() {
+            document.getElementById('loading').style.display = 'block';
+            document.getElementById('machines-container').style.display = 'none';
+        }
+
+        function showContainer() {
+            document.getElementById('loading').style.display = 'none';
+            document.getElementById('machines-container').style.display = 'flex';
+        }
+
+        function showError() {
+            document.getElementById('error-message').style.display = 'block';
+            document.getElementById('loading').style.display = 'none';
+        }
+
+        function hideError() {
+            document.getElementById('error-message').style.display = 'none';
+        }
+
+        function updateConnectionStatus(connected) {
+            const status = document.getElementById('connection-status');
+            if (connected) {
+                status.className = 'badge bg-success';
+                status.innerHTML = '<i class="fas fa-wifi"></i> Conectado';
+            } else {
+                status.className = 'badge bg-danger';
+                status.innerHTML = '<i class="fas fa-plug"></i> Desconectado';
+            }
+        }
+
+        // Testar API
+        async function testAPI() {
+            try {
+                const response = await fetch('/api/test');
+                if (response.ok) {
+                    alert('API está funcionando corretamente!');
+                } else {
+                    alert('Erro na API: ' + response.status);
+                }
+            } catch (error) {
+                alert('Não foi possível conectar à API: ' + error.message);
+            }
+        }
+
+        // Carregar máquinas ao iniciar e a cada 30 segundos
+        document.addEventListener('DOMContentLoaded', function() {
+            loadMachines();
+            setInterval(loadMachines, 30000);
+        });
+    </script>
+</body>
+</html>
