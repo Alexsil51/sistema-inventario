@@ -22,11 +22,12 @@
         }
         .status-online { background-color: #28a745; }
         .status-offline { background-color: #dc3545; }
-        .chart-container {
-            position: relative;
-            height: 300px;
-            width: 100%;
-        }
+
+       .chart-container {
+    position: relative;
+    height: 280px; /* Reduzi um pouco para caber melhor */
+    width: 100%;
+}
 
         .alert-sm {
         padding: 0.25rem 0.5rem;
@@ -44,9 +45,17 @@
 
     .compliance-chart-container {
     position: relative;
-    height: 280px;
+    height: 280px; /* Igual ao outro */
     width: 100%;
+}
+
+/* Para telas menores */
+@media (max-width: 768px) {
+    .chart-container,
+    .compliance-chart-container {
+        height: 250px;
     }
+}
 
     .chart-container {
     position: relative;
@@ -139,10 +148,11 @@
                     </div>
                 </div>
 
-<!-- Gráfico de Distribuição de SO -->
+<!-- Gráficos Lado a Lado -->
 <div class="row mb-4">
-    <div class="col-12">
-        <div class="card">
+    <!-- Gráfico de Distribuição de SO -->
+    <div class="col-md-6 mb-4 mb-md-0">
+        <div class="card h-100">
             <div class="card-header">
                 <h5><i class="fas fa-chart-pie"></i> Distribuição de Sistemas Operacionais</h5>
             </div>
@@ -153,12 +163,10 @@
             </div>
         </div>
     </div>
-</div>
 
-<!-- NOVO GRÁFICO DE COMPLIANCE MENSAL -->
-<div class="row mb-4">
-    <div class="col-12">
-        <div class="card">
+    <!-- Gráfico de Compliance Mensal -->
+    <div class="col-md-6">
+        <div class="card h-100">
             <div class="card-header">
                 <h5><i class="fas fa-calendar-check"></i> Compliance Mensal - Inventário</h5>
             </div>

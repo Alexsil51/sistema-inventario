@@ -6824,3 +6824,228 @@ AttributeError: 'DatabaseManager' object has no attribute 'delete_machine'
 2025-09-22 18:33:24,694 [INFO] Conexão com o banco de dados estabelecida
 2025-09-22 18:33:24,698 [INFO] Conexão com o banco encerrada
 2025-09-22 18:33:24,699 [INFO] 10.65.0.16 - - [22/Sep/2025 18:33:24] "GET /api/machines_dashboard HTTP/1.1" 200 -
+2025-09-24 18:20:32,545 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.65.0.16:5000
+2025-09-24 18:20:32,546 [INFO] [33mPress CTRL+C to quit[0m
+2025-09-24 18:20:32,549 [INFO]  * Restarting with stat
+2025-09-24 18:20:32,926 [WARNING]  * Debugger is active!
+2025-09-24 18:20:32,934 [INFO]  * Debugger PIN: 119-986-596
+2025-09-24 18:20:37,309 [INFO] package: mysql.connector.plugins
+2025-09-24 18:20:37,309 [INFO] plugin_name: caching_sha2_password
+2025-09-24 18:20:37,311 [INFO] AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2025-09-24 18:20:37,350 [INFO] Conexão com o banco de dados estabelecida
+2025-09-24 18:20:37,397 [INFO] Conexão com o banco encerrada
+2025-09-24 18:20:37,398 [INFO] 10.65.0.16 - - [24/Sep/2025 18:20:37] "GET /api/machines_dashboard HTTP/1.1" 200 -
+2025-09-24 18:20:42,887 [INFO] 10.65.0.16 - - [24/Sep/2025 18:20:42] "[36mGET /dashboard HTTP/1.1[0m" 304 -
+2025-09-24 18:20:43,045 [INFO] Conexão com o banco de dados estabelecida
+2025-09-24 18:20:43,054 [INFO] Conexão com o banco encerrada
+2025-09-24 18:20:43,055 [INFO] 10.65.0.16 - - [24/Sep/2025 18:20:43] "GET /api/machines_dashboard HTTP/1.1" 200 -
+2025-09-24 18:20:43,060 [INFO] 10.65.0.16 - - [24/Sep/2025 18:20:43] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-09-24 18:21:13,096 [INFO] Conexão com o banco de dados estabelecida
+2025-09-24 18:21:13,103 [INFO] Conexão com o banco encerrada
+2025-09-24 18:21:13,104 [INFO] 10.65.0.16 - - [24/Sep/2025 18:21:13] "GET /api/machines_dashboard HTTP/1.1" 200 -
+2025-09-24 18:21:31,865 [INFO] 10.65.0.16 - - [24/Sep/2025 18:21:31] "GET /api/test HTTP/1.1" 200 -
+2025-09-24 18:21:34,861 [INFO] Conexão com o banco de dados estabelecida
+2025-09-24 18:21:34,868 [INFO] Conexão com o banco encerrada
+2025-09-24 18:21:34,871 [INFO] 10.65.0.16 - - [24/Sep/2025 18:21:34] "GET /api/machines_dashboard HTTP/1.1" 200 -
+2025-09-24 18:21:43,101 [INFO] Conexão com o banco de dados estabelecida
+2025-09-24 18:21:43,106 [INFO] Conexão com o banco encerrada
+2025-09-24 18:21:43,107 [INFO] 10.65.0.16 - - [24/Sep/2025 18:21:43] "GET /api/machines_dashboard HTTP/1.1" 200 -
+2025-09-24 18:22:13,669 [INFO] Conexão com o banco de dados estabelecida
+2025-09-24 18:22:13,678 [INFO] Conexão com o banco encerrada
+2025-09-24 18:22:13,679 [INFO] 10.65.0.16 - - [24/Sep/2025 18:22:13] "GET /api/machines_dashboard HTTP/1.1" 200 -
+2025-09-24 18:22:43,659 [INFO] Conexão com o banco de dados estabelecida
+2025-09-24 18:22:43,665 [INFO] Conexão com o banco encerrada
+2025-09-24 18:22:43,667 [INFO] 10.65.0.16 - - [24/Sep/2025 18:22:43] "GET /api/machines_dashboard HTTP/1.1" 200 -
+2025-09-24 18:23:13,635 [INFO] Conexão com o banco de dados estabelecida
+2025-09-24 18:23:13,643 [INFO] Conexão com o banco encerrada
+2025-09-24 18:23:13,644 [INFO] 10.65.0.16 - - [24/Sep/2025 18:23:13] "GET /api/machines_dashboard HTTP/1.1" 200 -
+2025-09-24 18:23:43,650 [INFO] Conexão com o banco de dados estabelecida
+2025-09-24 18:23:43,655 [INFO] Conexão com o banco encerrada
+2025-09-24 18:23:43,656 [INFO] 10.65.0.16 - - [24/Sep/2025 18:23:43] "GET /api/machines_dashboard HTTP/1.1" 200 -
+2025-09-24 18:24:13,658 [INFO] Conexão com o banco de dados estabelecida
+2025-09-24 18:24:13,663 [INFO] Conexão com o banco encerrada
+2025-09-24 18:24:13,664 [INFO] 10.65.0.16 - - [24/Sep/2025 18:24:13] "GET /api/machines_dashboard HTTP/1.1" 200 -
+2025-09-24 18:24:43,651 [INFO] Conexão com o banco de dados estabelecida
+2025-09-24 18:24:43,657 [INFO] Conexão com o banco encerrada
+2025-09-24 18:24:43,660 [INFO] 10.65.0.16 - - [24/Sep/2025 18:24:43] "GET /api/machines_dashboard HTTP/1.1" 200 -
+2025-09-24 18:25:13,685 [INFO] Conexão com o banco de dados estabelecida
+2025-09-24 18:25:13,692 [INFO] Conexão com o banco encerrada
+2025-09-24 18:25:13,693 [INFO] 10.65.0.16 - - [24/Sep/2025 18:25:13] "GET /api/machines_dashboard HTTP/1.1" 200 -
+2025-09-24 18:25:43,842 [INFO] Conexão com o banco de dados estabelecida
+2025-09-24 18:25:43,846 [INFO] Conexão com o banco encerrada
+2025-09-24 18:25:43,847 [INFO] 10.65.0.16 - - [24/Sep/2025 18:25:43] "GET /api/machines_dashboard HTTP/1.1" 200 -
+2025-09-24 18:26:13,826 [INFO] Conexão com o banco de dados estabelecida
+2025-09-24 18:26:13,830 [INFO] Conexão com o banco encerrada
+2025-09-24 18:26:13,831 [INFO] 10.65.0.16 - - [24/Sep/2025 18:26:13] "GET /api/machines_dashboard HTTP/1.1" 200 -
+2025-09-24 18:26:44,617 [INFO] Conexão com o banco de dados estabelecida
+2025-09-24 18:26:44,622 [INFO] Conexão com o banco encerrada
+2025-09-24 18:26:44,624 [INFO] 10.65.0.16 - - [24/Sep/2025 18:26:44] "GET /api/machines_dashboard HTTP/1.1" 200 -
+2025-09-24 18:27:14,656 [INFO] Conexão com o banco de dados estabelecida
+2025-09-24 18:27:14,660 [INFO] Conexão com o banco encerrada
+2025-09-24 18:27:14,661 [INFO] 10.65.0.16 - - [24/Sep/2025 18:27:14] "GET /api/machines_dashboard HTTP/1.1" 200 -
+2025-09-24 18:27:44,630 [INFO] Conexão com o banco de dados estabelecida
+2025-09-24 18:27:44,635 [INFO] Conexão com o banco encerrada
+2025-09-24 18:27:44,636 [INFO] 10.65.0.16 - - [24/Sep/2025 18:27:44] "GET /api/machines_dashboard HTTP/1.1" 200 -
+2025-09-24 18:28:14,676 [INFO] Conexão com o banco de dados estabelecida
+2025-09-24 18:28:14,681 [INFO] Conexão com o banco encerrada
+2025-09-24 18:28:14,682 [INFO] 10.65.0.16 - - [24/Sep/2025 18:28:14] "GET /api/machines_dashboard HTTP/1.1" 200 -
+2025-09-24 18:28:46,044 [INFO] Conexão com o banco de dados estabelecida
+2025-09-24 18:28:46,048 [INFO] Conexão com o banco encerrada
+2025-09-24 18:28:46,050 [INFO] 10.65.0.16 - - [24/Sep/2025 18:28:46] "GET /api/machines_dashboard HTTP/1.1" 200 -
+2025-09-24 18:29:16,005 [INFO] Conexão com o banco de dados estabelecida
+2025-09-24 18:29:16,009 [INFO] Conexão com o banco encerrada
+2025-09-24 18:29:16,010 [INFO] 10.65.0.16 - - [24/Sep/2025 18:29:16] "GET /api/machines_dashboard HTTP/1.1" 200 -
+2025-09-24 18:29:46,011 [INFO] Conexão com o banco de dados estabelecida
+2025-09-24 18:29:46,016 [INFO] Conexão com o banco encerrada
+2025-09-24 18:29:46,017 [INFO] 10.65.0.16 - - [24/Sep/2025 18:29:46] "GET /api/machines_dashboard HTTP/1.1" 200 -
+2025-09-24 18:30:16,087 [INFO] Conexão com o banco de dados estabelecida
+2025-09-24 18:30:16,092 [INFO] Conexão com o banco encerrada
+2025-09-24 18:30:16,093 [INFO] 10.65.0.16 - - [24/Sep/2025 18:30:16] "GET /api/machines_dashboard HTTP/1.1" 200 -
+2025-09-24 18:30:46,043 [INFO] Conexão com o banco de dados estabelecida
+2025-09-24 18:30:46,052 [INFO] Conexão com o banco encerrada
+2025-09-24 18:30:46,053 [INFO] 10.65.0.16 - - [24/Sep/2025 18:30:46] "GET /api/machines_dashboard HTTP/1.1" 200 -
+2025-09-24 18:31:16,059 [INFO] Conexão com o banco de dados estabelecida
+2025-09-24 18:31:16,063 [INFO] Conexão com o banco encerrada
+2025-09-24 18:31:16,064 [INFO] 10.65.0.16 - - [24/Sep/2025 18:31:16] "GET /api/machines_dashboard HTTP/1.1" 200 -
+2025-09-24 18:31:46,096 [INFO] Conexão com o banco de dados estabelecida
+2025-09-24 18:31:46,101 [INFO] Conexão com o banco encerrada
+2025-09-24 18:31:46,103 [INFO] 10.65.0.16 - - [24/Sep/2025 18:31:46] "GET /api/machines_dashboard HTTP/1.1" 200 -
+2025-09-24 18:32:16,070 [INFO] Conexão com o banco de dados estabelecida
+2025-09-24 18:32:16,077 [INFO] Conexão com o banco encerrada
+2025-09-24 18:32:16,078 [INFO] 10.65.0.16 - - [24/Sep/2025 18:32:16] "GET /api/machines_dashboard HTTP/1.1" 200 -
+2025-09-24 18:32:46,164 [INFO] Conexão com o banco de dados estabelecida
+2025-09-24 18:32:46,169 [INFO] Conexão com o banco encerrada
+2025-09-24 18:32:46,171 [INFO] 10.65.0.16 - - [24/Sep/2025 18:32:46] "GET /api/machines_dashboard HTTP/1.1" 200 -
+2025-09-24 18:33:16,361 [INFO] Conexão com o banco de dados estabelecida
+2025-09-24 18:33:16,366 [INFO] Conexão com o banco encerrada
+2025-09-24 18:33:16,367 [INFO] 10.65.0.16 - - [24/Sep/2025 18:33:16] "GET /api/machines_dashboard HTTP/1.1" 200 -
+2025-09-24 18:33:46,466 [INFO] Conexão com o banco de dados estabelecida
+2025-09-24 18:33:46,469 [INFO] Conexão com o banco encerrada
+2025-09-24 18:33:46,470 [INFO] 10.65.0.16 - - [24/Sep/2025 18:33:46] "GET /api/machines_dashboard HTTP/1.1" 200 -
+2025-09-24 18:34:16,467 [INFO] Conexão com o banco de dados estabelecida
+2025-09-24 18:34:16,469 [INFO] Conexão com o banco encerrada
+2025-09-24 18:34:16,470 [INFO] 10.65.0.16 - - [24/Sep/2025 18:34:16] "GET /api/machines_dashboard HTTP/1.1" 200 -
+2025-09-24 18:34:46,495 [INFO] Conexão com o banco de dados estabelecida
+2025-09-24 18:34:46,498 [INFO] Conexão com o banco encerrada
+2025-09-24 18:34:46,500 [INFO] 10.65.0.16 - - [24/Sep/2025 18:34:46] "GET /api/machines_dashboard HTTP/1.1" 200 -
+2025-09-24 18:35:16,488 [INFO] Conexão com o banco de dados estabelecida
+2025-09-24 18:35:16,493 [INFO] Conexão com o banco encerrada
+2025-09-24 18:35:16,493 [INFO] 10.65.0.16 - - [24/Sep/2025 18:35:16] "GET /api/machines_dashboard HTTP/1.1" 200 -
+2025-09-24 18:35:46,472 [INFO] Conexão com o banco de dados estabelecida
+2025-09-24 18:35:46,475 [INFO] Conexão com o banco encerrada
+2025-09-24 18:35:46,476 [INFO] 10.65.0.16 - - [24/Sep/2025 18:35:46] "GET /api/machines_dashboard HTTP/1.1" 200 -
+2025-09-24 18:36:16,552 [INFO] Conexão com o banco de dados estabelecida
+2025-09-24 18:36:16,557 [INFO] Conexão com o banco encerrada
+2025-09-24 18:36:16,558 [INFO] 10.65.0.16 - - [24/Sep/2025 18:36:16] "GET /api/machines_dashboard HTTP/1.1" 200 -
+2025-09-24 18:36:46,534 [INFO] Conexão com o banco de dados estabelecida
+2025-09-24 18:36:46,538 [INFO] Conexão com o banco encerrada
+2025-09-24 18:36:46,539 [INFO] 10.65.0.16 - - [24/Sep/2025 18:36:46] "GET /api/machines_dashboard HTTP/1.1" 200 -
+2025-09-24 18:37:16,550 [INFO] Conexão com o banco de dados estabelecida
+2025-09-24 18:37:16,554 [INFO] Conexão com o banco encerrada
+2025-09-24 18:37:16,555 [INFO] 10.65.0.16 - - [24/Sep/2025 18:37:16] "GET /api/machines_dashboard HTTP/1.1" 200 -
+2025-09-24 18:37:47,004 [INFO] Conexão com o banco de dados estabelecida
+2025-09-24 18:37:47,007 [INFO] Conexão com o banco encerrada
+2025-09-24 18:37:47,008 [INFO] 10.65.0.16 - - [24/Sep/2025 18:37:47] "GET /api/machines_dashboard HTTP/1.1" 200 -
+2025-09-24 18:38:16,884 [INFO] Conexão com o banco de dados estabelecida
+2025-09-24 18:38:16,887 [INFO] Conexão com o banco encerrada
+2025-09-24 18:38:16,889 [INFO] 10.65.0.16 - - [24/Sep/2025 18:38:16] "GET /api/machines_dashboard HTTP/1.1" 200 -
+2025-09-24 18:38:47,029 [INFO] Conexão com o banco de dados estabelecida
+2025-09-24 18:38:47,032 [INFO] Conexão com o banco encerrada
+2025-09-24 18:38:47,034 [INFO] 10.65.0.16 - - [24/Sep/2025 18:38:47] "GET /api/machines_dashboard HTTP/1.1" 200 -
+2025-09-24 18:39:17,046 [INFO] Conexão com o banco de dados estabelecida
+2025-09-24 18:39:17,051 [INFO] Conexão com o banco encerrada
+2025-09-24 18:39:17,052 [INFO] 10.65.0.16 - - [24/Sep/2025 18:39:17] "GET /api/machines_dashboard HTTP/1.1" 200 -
+2025-09-24 18:39:47,068 [INFO] Conexão com o banco de dados estabelecida
+2025-09-24 18:39:47,072 [INFO] Conexão com o banco encerrada
+2025-09-24 18:39:47,073 [INFO] 10.65.0.16 - - [24/Sep/2025 18:39:47] "GET /api/machines_dashboard HTTP/1.1" 200 -
+2025-09-24 18:40:17,060 [INFO] Conexão com o banco de dados estabelecida
+2025-09-24 18:40:17,063 [INFO] Conexão com o banco encerrada
+2025-09-24 18:40:17,064 [INFO] 10.65.0.16 - - [24/Sep/2025 18:40:17] "GET /api/machines_dashboard HTTP/1.1" 200 -
+2025-09-24 18:40:47,038 [INFO] Conexão com o banco de dados estabelecida
+2025-09-24 18:40:47,042 [INFO] Conexão com o banco encerrada
+2025-09-24 18:40:47,043 [INFO] 10.65.0.16 - - [24/Sep/2025 18:40:47] "GET /api/machines_dashboard HTTP/1.1" 200 -
+2025-09-24 18:41:17,091 [INFO] Conexão com o banco de dados estabelecida
+2025-09-24 18:41:17,095 [INFO] Conexão com o banco encerrada
+2025-09-24 18:41:17,097 [INFO] 10.65.0.16 - - [24/Sep/2025 18:41:17] "GET /api/machines_dashboard HTTP/1.1" 200 -
+2025-09-24 18:41:47,492 [INFO] Conexão com o banco de dados estabelecida
+2025-09-24 18:41:47,496 [INFO] Conexão com o banco encerrada
+2025-09-24 18:41:47,497 [INFO] 10.65.0.16 - - [24/Sep/2025 18:41:47] "GET /api/machines_dashboard HTTP/1.1" 200 -
+2025-09-24 18:42:17,669 [INFO] Conexão com o banco de dados estabelecida
+2025-09-24 18:42:17,677 [INFO] Conexão com o banco encerrada
+2025-09-24 18:42:17,678 [INFO] 10.65.0.16 - - [24/Sep/2025 18:42:17] "GET /api/machines_dashboard HTTP/1.1" 200 -
+2025-09-24 18:42:47,649 [INFO] Conexão com o banco de dados estabelecida
+2025-09-24 18:42:47,653 [INFO] Conexão com o banco encerrada
+2025-09-24 18:42:47,655 [INFO] 10.65.0.16 - - [24/Sep/2025 18:42:47] "GET /api/machines_dashboard HTTP/1.1" 200 -
+2025-09-24 18:43:17,672 [INFO] Conexão com o banco de dados estabelecida
+2025-09-24 18:43:17,678 [INFO] Conexão com o banco encerrada
+2025-09-24 18:43:17,679 [INFO] 10.65.0.16 - - [24/Sep/2025 18:43:17] "GET /api/machines_dashboard HTTP/1.1" 200 -
+2025-09-24 18:43:47,678 [INFO] Conexão com o banco de dados estabelecida
+2025-09-24 18:43:47,682 [INFO] Conexão com o banco encerrada
+2025-09-24 18:43:47,684 [INFO] 10.65.0.16 - - [24/Sep/2025 18:43:47] "GET /api/machines_dashboard HTTP/1.1" 200 -
+2025-09-24 18:44:17,670 [INFO] Conexão com o banco de dados estabelecida
+2025-09-24 18:44:17,674 [INFO] Conexão com o banco encerrada
+2025-09-24 18:44:17,675 [INFO] 10.65.0.16 - - [24/Sep/2025 18:44:17] "GET /api/machines_dashboard HTTP/1.1" 200 -
+2025-09-24 18:44:47,743 [INFO] Conexão com o banco de dados estabelecida
+2025-09-24 18:44:47,748 [INFO] Conexão com o banco encerrada
+2025-09-24 18:44:47,749 [INFO] 10.65.0.16 - - [24/Sep/2025 18:44:47] "GET /api/machines_dashboard HTTP/1.1" 200 -
+2025-09-24 18:45:17,682 [INFO] Conexão com o banco de dados estabelecida
+2025-09-24 18:45:17,686 [INFO] Conexão com o banco encerrada
+2025-09-24 18:45:17,687 [INFO] 10.65.0.16 - - [24/Sep/2025 18:45:17] "GET /api/machines_dashboard HTTP/1.1" 200 -
+2025-09-24 18:45:47,677 [INFO] Conexão com o banco de dados estabelecida
+2025-09-24 18:45:47,680 [INFO] Conexão com o banco encerrada
+2025-09-24 18:45:47,681 [INFO] 10.65.0.16 - - [24/Sep/2025 18:45:47] "GET /api/machines_dashboard HTTP/1.1" 200 -
+2025-09-24 18:46:17,704 [INFO] Conexão com o banco de dados estabelecida
+2025-09-24 18:46:17,710 [INFO] Conexão com o banco encerrada
+2025-09-24 18:46:17,711 [INFO] 10.65.0.16 - - [24/Sep/2025 18:46:17] "GET /api/machines_dashboard HTTP/1.1" 200 -
+2025-09-24 18:46:47,753 [INFO] Conexão com o banco de dados estabelecida
+2025-09-24 18:46:47,758 [INFO] Conexão com o banco encerrada
+2025-09-24 18:46:47,759 [INFO] 10.65.0.16 - - [24/Sep/2025 18:46:47] "GET /api/machines_dashboard HTTP/1.1" 200 -
+2025-09-24 18:47:17,757 [INFO] Conexão com o banco de dados estabelecida
+2025-09-24 18:47:17,761 [INFO] Conexão com o banco encerrada
+2025-09-24 18:47:17,762 [INFO] 10.65.0.16 - - [24/Sep/2025 18:47:17] "GET /api/machines_dashboard HTTP/1.1" 200 -
+2025-09-24 18:47:47,726 [INFO] Conexão com o banco de dados estabelecida
+2025-09-24 18:47:47,730 [INFO] Conexão com o banco encerrada
+2025-09-24 18:47:47,731 [INFO] 10.65.0.16 - - [24/Sep/2025 18:47:47] "GET /api/machines_dashboard HTTP/1.1" 200 -
+2025-09-24 18:48:17,767 [INFO] Conexão com o banco de dados estabelecida
+2025-09-24 18:48:17,772 [INFO] Conexão com o banco encerrada
+2025-09-24 18:48:17,774 [INFO] 10.65.0.16 - - [24/Sep/2025 18:48:17] "GET /api/machines_dashboard HTTP/1.1" 200 -
+2025-09-24 18:48:47,942 [INFO] Conexão com o banco de dados estabelecida
+2025-09-24 18:48:47,948 [INFO] Conexão com o banco encerrada
+2025-09-24 18:48:47,950 [INFO] 10.65.0.16 - - [24/Sep/2025 18:48:47] "GET /api/machines_dashboard HTTP/1.1" 200 -
+2025-09-24 18:49:18,061 [INFO] Conexão com o banco de dados estabelecida
+2025-09-24 18:49:18,066 [INFO] Conexão com o banco encerrada
+2025-09-24 18:49:18,067 [INFO] 10.65.0.16 - - [24/Sep/2025 18:49:18] "GET /api/machines_dashboard HTTP/1.1" 200 -
+2025-09-24 18:49:48,132 [INFO] Conexão com o banco de dados estabelecida
+2025-09-24 18:49:48,138 [INFO] Conexão com o banco encerrada
+2025-09-24 18:49:48,139 [INFO] 10.65.0.16 - - [24/Sep/2025 18:49:48] "GET /api/machines_dashboard HTTP/1.1" 200 -
+2025-09-24 18:50:18,118 [INFO] Conexão com o banco de dados estabelecida
+2025-09-24 18:50:18,121 [INFO] Conexão com o banco encerrada
+2025-09-24 18:50:18,122 [INFO] 10.65.0.16 - - [24/Sep/2025 18:50:18] "GET /api/machines_dashboard HTTP/1.1" 200 -
+2025-09-24 18:50:48,238 [INFO] Conexão com o banco de dados estabelecida
+2025-09-24 18:50:48,242 [INFO] Conexão com o banco encerrada
+2025-09-24 18:50:48,243 [INFO] 10.65.0.16 - - [24/Sep/2025 18:50:48] "GET /api/machines_dashboard HTTP/1.1" 200 -
+2025-09-24 18:51:18,524 [INFO] Conexão com o banco de dados estabelecida
+2025-09-24 18:51:18,530 [INFO] Conexão com o banco encerrada
+2025-09-24 18:51:18,532 [INFO] 10.65.0.16 - - [24/Sep/2025 18:51:18] "GET /api/machines_dashboard HTTP/1.1" 200 -
+2025-09-24 18:56:45,335 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.65.0.16:5000
+2025-09-24 18:56:45,335 [INFO] [33mPress CTRL+C to quit[0m
+2025-09-24 18:56:45,337 [INFO]  * Restarting with stat
+2025-09-24 18:56:45,796 [WARNING]  * Debugger is active!
+2025-09-24 18:56:45,817 [INFO]  * Debugger PIN: 119-986-596
+2025-09-24 18:56:49,572 [INFO] 10.65.0.16 - - [24/Sep/2025 18:56:49] "GET /dashboard HTTP/1.1" 200 -
+2025-09-24 18:56:49,754 [INFO] 10.65.0.16 - - [24/Sep/2025 18:56:49] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-09-24 18:56:49,869 [INFO] package: mysql.connector.plugins
+2025-09-24 18:56:49,869 [INFO] plugin_name: caching_sha2_password
+2025-09-24 18:56:49,871 [INFO] AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2025-09-24 18:56:49,873 [INFO] Conexão com o banco de dados estabelecida
+2025-09-24 18:56:49,875 [INFO] Conexão com o banco encerrada
+2025-09-24 18:56:49,876 [INFO] 10.65.0.16 - - [24/Sep/2025 18:56:49] "GET /api/machines_dashboard HTTP/1.1" 200 -
+2025-09-24 18:57:20,148 [INFO] Conexão com o banco de dados estabelecida
+2025-09-24 18:57:20,150 [INFO] Conexão com o banco encerrada
+2025-09-24 18:57:20,151 [INFO] 10.65.0.16 - - [24/Sep/2025 18:57:20] "GET /api/machines_dashboard HTTP/1.1" 200 -
